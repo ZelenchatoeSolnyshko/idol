@@ -52,6 +52,9 @@ public class MySimpleList<T> implements Iterable<T>{
     }
 
     public void remove() {
-        // TODO: 03.10.2024 CODE HERE
+        head = (head == null)
+                ? null
+                : listStrategy.remove(head);
+        length--;
     }
 }

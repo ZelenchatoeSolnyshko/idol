@@ -10,7 +10,7 @@ public class MyPanel extends JPanel implements Observer {
     private Controller controller;
 
     public MyPanel(Controller controller) {
-        // TODO: 03.10.2024 CODE HERE
+        this.controller = controller;
         JPanel panel = new JPanel();
         panel.add(controller.getOutputView());
         add(panel);

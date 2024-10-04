@@ -4,22 +4,20 @@ public class QueueStrategy<T> implements ListStrategy<T> {
 
     @Override
     public MyNode<T> add(MyNode<T> head, MyNode<T> newMyNode) {
-        if (head == null) {
-            return newMyNode;
+        MyNode<T> iter = head;
+        while (iter.getNext() != null) {
+            iter = iter.getNext();
         }
-
-        MyNode<T> tail = head;
-        while (tail.getNext() != null) {
-            tail = tail.getNext();
-        }
-        tail.setNext(newMyNode);
-
+        iter.setValue(null);
         return head;
     }
 
     @Override
     public MyNode<T> remove(MyNode<T> head) {
-        // TODO: 03.10.2024 CODE HERE
-        return null;
+        MyNode<T> o = head;
+        head = o.getNext();
+        o.setNext(null);
+        o.setValue(null);
+        return head;
     }
 }
